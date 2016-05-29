@@ -1,5 +1,5 @@
 import React from 'react'
-import { SelectElement } from '../select-element'
+import { SelectElement } from 'react-select-element'
 
 export default () => (
   <section>

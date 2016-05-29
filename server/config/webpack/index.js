@@ -30,7 +30,7 @@ module.exports = {
 			{
 				test: /\.js?$/,
 				exclude: [
-					/node_modules/,
+					/node_modules\/(?!(react-select-element)).*/,
 					/bower_components/
 				],
 				loader: 'babel',

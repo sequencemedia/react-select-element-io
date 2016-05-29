@@ -36,6 +36,7 @@
     "react-dom": "^15.0.1",
     "react-router": "^2.3.0",
     "react-routes-renderer": "^1.0.5",
+    "react-select-element": "^1.0.1",
     "vision": "^4.0.1"
   },
   "devDependencies": {
