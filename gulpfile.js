@@ -14,7 +14,7 @@ var path = require('path'),
 
 gulp
 	.task('default', ['css', 'webpack', 'uglify', 'watch', 'server', 'watch-server'], function () {
-		console.log('[React Router Pagination]');
+		console.log('[React Select Element]');
 	})
 	.task('css', function() {
 		return gulp.src(path.resolve(srcPath, 'css/**/*.css'))

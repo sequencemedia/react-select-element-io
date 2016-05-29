@@ -40,9 +40,6 @@ nconf.argv().env().defaults(config);
 				handler: function (request, reply) {
 					renderer.render(Routes, request.url.path)
 						.then(function (o) {
-
-console.log(o)
-
 							if (o.redirect) return reply.redirect(o.redirect.pathname + o.redirect.search);
 							reply.view('index', { title: 'React Select Element', react: o.rendered });
 						})
