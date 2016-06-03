@@ -19,8 +19,7 @@
     "parser": "babel-eslint"
   },
   "dependencies": {
-    "nconf": "^0.8.4",
-    "babel-runtime": "^6.6.1",
+    "babel-runtime": "^6.9.2",
     "boom": "^3.1.2",
     "good": "^7.0.0",
     "good-console": "^6.1.1",
@@ -31,12 +30,13 @@
     "http-proxy": "^1.13.1",
     "http-request": "^0.7.0",
     "inert": "^4.0.0",
-    "joi": "^8.1.0",
+    "joi": "^8.4.0",
+    "nconf": "^0.8.4",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-router": "^2.3.0",
-    "react-routes-renderer": "^1.0.5",
-    "react-select-element": "^1.0.1",
+    "react-routes-renderer": "^1.0.8",
+    "react-select-element": "^1.0.4",
     "vision": "^4.0.1"
   },
   "devDependencies": {
