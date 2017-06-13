@@ -1,109 +1,86 @@
-/* eslint-disable */
+require('babel-register')
 
-	var path = require('path'),
+const path = require('path')
 
-		nconf = require('nconf'),
+const nconf = require('nconf')
 
-		Hapi = require('hapi'),
-		Good = require('good'),
-		Boom = require('boom'),
-		Joi = require('joi'),
+const Hapi = require('hapi')
+const Boom = require('boom')
 
-		inert = require('inert'),
-		vision = require('vision'),
-		hogan = require('hapi-hogan'),
+const inert = require('inert')
+const vision = require('vision')
+const hogan = require('hapi-hogan')
 
-		clientPath = path.resolve(__dirname, 'client'),
-		serverPath = path.resolve(__dirname, 'server'),
-		publicPath = path.resolve(__dirname, 'public'),
-		assetsPath = path.resolve(publicPath, 'assets'),
+const modulePath = process.cwd()
+const clientPath = path.resolve(modulePath, 'client')
+const serverPath = path.resolve(modulePath, 'server')
+const publicPath = path.resolve(modulePath, 'public')
+const configPath = path.resolve(serverPath, 'config')
+const assetsPath = path.resolve(publicPath, 'assets')
 
-		server = new Hapi.Server(),
-		config = require(path.resolve(serverPath, 'config'))(),
+const config = require(configPath)()
 
-		Renderer = require('react-routes-renderer').Renderer,
-		renderer = new Renderer(),
-		Routes = require(path.resolve(clientPath, 'app/components')).Routes;
+const {
+  good
+} = require(path.join(configPath, 'good'))
+const {
+  Renderer
+} = require('react-routes-renderer')
+const {
+  Routes
+} = require(path.resolve(clientPath, 'app/components'))
 
-nconf.argv().env().defaults(config);
+const server = new Hapi.Server()
 
-	server.register(inert, function (e) {
-		if (e) throw e;
-		server.connection(nconf.get('server:connection'));
-		/*
-			Static Routes
-		*/
-		server.route({
-			method: '*',
-			path: '/',
-			config: {
-				handler: function (request, reply) {
-					renderer.render(Routes, request.url.path)
-						.then(function (o) {
-							if (o.redirect) return reply.redirect(o.redirect.pathname + o.redirect.search);
-							reply.view('index', { title: 'React Select Element', react: o.rendered });
-						})
-						.catch(function (e) {
-							reply(Boom.notFound());
-						});
-				}
-			}
-		});
-		server.route({
-			path: '/assets/{path*}',
-			method: 'GET',
-			handler: {
-				directory: {
-					path: path.normalize(assetsPath),
-					listing: false,
-					index: false
-				}
-			}
-		});
-		server.log('info', 'Inert');
-	});
-	server.register(vision, function (e) {
-		if (e) throw e;
-		server.views({
-			relativeTo: __dirname,
-			path: path.resolve(serverPath, 'views'),
-			engines: {
-				html: {
-					module: hogan,
-					compileMode: 'sync',
-					compileOptions: {
-						partialsPath: path.resolve(serverPath, 'views/partials'),
-						isCached: true
-					}
-				}
-			}
-		});
-		server.log('info', 'Vision');
-	});
+const renderer = new Renderer()
 
-	server.register({
-		register: Good,
-		options: {
-			ops: {
-				interval: 1000
-			},
-			reporters: {
-				console: [{
-					module: 'good-squeeze',
-					name: 'Squeeze',
-					args: [{ log: '*', response: '*' }]
-				}, {
-					module: 'good-console'
-				}, 'stdout']
-			}
-		}
-	}, function (e) {
-		if (e) {
-			console.log('Good', e);
-			process.exit();
-		}
-	});
+nconf.argv().env().defaults(config)
 
-	server.start(function () {
-		server.log('info', server.info.uri);
-	});
+server.connection(nconf.get('server:connection'))
+
+server.register([good, inert, vision], (e) => {
+  if (e) throw e
+
+  server.views({
+    relativeTo: modulePath,
+    path: path.resolve(serverPath, 'views'),
+    engines: {
+      html: {
+        module: hogan,
+        compileMode: 'sync',
+        compileOptions: {
+          isCached: true
+        }
+      }
+    }
+  })
+
+  server.route({
+    method: '*',
+    path: '/',
+    config: {
+      handler: ({ url: { path } }, reply) => {
+        renderer.render(Routes, path)
+          .then(({ rendered: react }) => {
+            reply.view('index', { title: 'React Select Element', react })
+          })
+          .catch(reply)
+      }
+    }
+  })
+  server.route({
+    path: '/assets/{path*}',
+    method: 'GET',
+    handler: {
+      directory: {
+        path: path.normalize(assetsPath),
+        listing: false,
+        index: false
+      }
+    }
+  })
+})
+
+server.start(() => {
+  server.log('info', `[React.Select.Element] ${server.info.uri}`)
+})

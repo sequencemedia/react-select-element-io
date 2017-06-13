@@ -1,19 +1,21 @@
-/* eslint-disable */
+const path = require('path')
 
-var path = require('path'),
-	processCwd = process.cwd(),
-	clientPath = path.resolve(processCwd, 'client'),
-	serverPath = path.resolve(processCwd, 'server'),
-	configPath = path.resolve(serverPath, 'config');
+const modulePath = process.cwd()
+const clientPath = path.resolve(modulePath, 'client')
+const serverPath = path.resolve(modulePath, 'server')
+const publicPath = path.resolve(modulePath, 'public')
+const configPath = path.resolve(serverPath, 'config')
 
-module.exports =  {
-	jshint: {
-		all: [
-			path.resolve(clientPath, 'app/**/*.js'),
-			path.resolve(clientPath, 'src/app.js')
-		]
-	},
-	webpack: {
-		run: require(path.resolve(configPath, 'webpack'))
-	}
-};
+module.exports = {
+  public: {
+    app: path.join(publicPath, 'assets/js/app')
+  },
+  client: {
+    app: [
+      path.join(clientPath, '**/*.js')
+    ]
+  },
+  webpack: {
+    run: require(path.resolve(configPath, 'webpack'))
+  }
+}

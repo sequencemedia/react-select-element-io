@@ -1,5 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router } from '../app/components'
+import {
+  Router
+} from '../app/components'
 
-ReactDOM.render(<Router />, document.getElementById('app'))
+const App = (
+  <Router />
+)
+
+const app = document.getElementById('app')
+
+ReactDOM.render(
+  App,
+  app
+)
