@@ -1,12 +1,14 @@
 import React from 'react'
-import {
-  SelectElement
-} from 'react-select-element'
+import SelectElement from 'react-select-element'
+
+const onChange = (selectedIndex) => console.log(selectedIndex)
 
 export default () => (
   <section>
     <h1>Select Element (Index Page)</h1>
     <SelectElement
+      onChange={onChange}
+      tabIndex={0}
       selectedIndex={4}
       options={[
         { value: 'A', text: 'A' },
