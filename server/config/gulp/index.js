@@ -12,7 +12,8 @@ module.exports = {
   },
   client: {
     app: [
-      path.join(clientPath, '**/*.js')
+      path.join(clientPath, '**/*.js'),
+      path.join(modulePath, 'node_modules/react-select-element/**/*.js')
     ]
   },
   webpack: {

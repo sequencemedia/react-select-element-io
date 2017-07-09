@@ -3,71 +3,11 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{{title}}</title>
-		<style type="text/css">
-
-			body {
-				font-family: arial, helvetica, sans-serif;
-			}
-
-			.selectElement {
-				font-size: .75rem;
-				position: relative;
-				z-index: 0;
-			}
-
-			.selectElement .selectedOption {
-				padding: 2px 8px;
-				background-color: white;
-				border: 1px solid #ccc;
-				margin: 0;
-				border-radius: 4px;
-			}
-
-			/*
-				Default focus outline is bobbins
-				In Chrome, there's a margin between the element and the outline
-				In FF, the outline is dashed
-			*/
-			.selectElement .selectedOption:focus {
-				outline: none;
-				box-shadow: 0px 0px 4px 2px rgba(59, 153, 252, 1);
-			}
-
-			.selectElement ul {
-				position:absolute;
-				margin: -1px 0 0;
-				width: 100%;
-				padding: 8px 0;
-				background-color: #f0f0f0;
-				border: 1px solid #aaa;
-				border-radius: 4px;
-				box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.25);
-				display: none;
-				cursor: default;
-			}
-
-			.selectElement ul.active {
-				display: block;
-			}
-
-			.selectElement li {
-				display: block;
-				list-style-type: none;
-				padding: 0 1rem;
-				cursor: default;
-			}
-
-			.selectElement li.active {
-				background-color: #3991fc;
-				color: white;
-			}
-
-		</style>
+		<title>React Select Element</title>
+		<link rel="stylesheet" href="/assets/css/react-select-element.css" />
+		<link rel="stylesheet" href="/assets/css/app/index.css" />
 	</head><body role="document">
-
-		<div id="app">{{{react}}}</div>
+		<div id="app">{{{app}}}</div>
 		<script type="text/javascript" src="/assets/js/app/index.js"></script>
-
 	</body>
 </html>

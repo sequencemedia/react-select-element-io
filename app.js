@@ -34,7 +34,9 @@ const server = new Hapi.Server()
 
 const renderer = new Renderer()
 
-nconf.argv().env().defaults(config)
+nconf
+  .argv().env()
+  .defaults(config)
 
 server.connection(nconf.get('server:connection'))
 
@@ -55,30 +57,41 @@ server.register([good, inert, vision], (e) => {
     }
   })
 
-  server.route({
-    method: '*',
-    path: '/',
-    config: {
-      handler: ({ url: { path } }, reply) => {
-        renderer.render(Routes, path)
-          .then(({ rendered: react }) => {
-            reply.view('index', { title: 'React Select Element', react })
-          })
-          .catch(reply)
+  server.route([
+    {
+      method: '*',
+      path: '/',
+      config: {
+        handler: ({ url: { path } }, reply) => {
+          renderer.render(Routes, path)
+            .then(({ rendered: app }) => {
+              reply.view('index', { app })
+            })
+            .catch(reply)
+        }
+      }
+    },
+    {
+      method: 'GET',
+      path: '/favicon.ico',
+      config: {
+        handler: (request, reply) => {
+          reply(Boom.notFound())
+        }
+      }
+    },
+    {
+      path: '/assets/{path*}',
+      method: 'GET',
+      handler: {
+        directory: {
+          path: path.normalize(assetsPath),
+          listing: false,
+          index: false
+        }
       }
     }
-  })
-  server.route({
-    path: '/assets/{path*}',
-    method: 'GET',
-    handler: {
-      directory: {
-        path: path.normalize(assetsPath),
-        listing: false,
-        index: false
-      }
-    }
-  })
+  ])
 })
 
 server.start(() => {
