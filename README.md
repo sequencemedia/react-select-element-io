@@ -1,4 +1,6 @@
-# React.Select.Element
+# React.Select.Element.IO
+
+An example implementation of [React.Select.Element](https://github.com/sequencemedia/React.Select.Element).
 
 CD into the application root folder and in your terminal enter the commands:
 
