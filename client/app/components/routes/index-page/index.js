@@ -27,6 +27,31 @@ const options = [
   { value: 4, text: 5 }
 ]
 
+class SelectWithScrollIntoViewA extends Select {
+  componentDidUpdate () {
+    const { activeOption } = this
+    if (activeOption) this.scrollOptionIntoView(activeOption)
+  }
+}
+
+class SelectWithScrollIntoViewB extends Select {
+  handleKeyArrowUp (event) {
+    super.handleKeyArrowUp()
+
+    const sibling = this.getActiveOptionPreviousSibling()
+
+    if (sibling) this.scrollOptionIntoView(sibling)
+  }
+
+  handleKeyArrowDown (event) {
+    super.handleKeyArrowDown()
+
+    const sibling = this.getActiveOptionNextSibling()
+
+    if (sibling) this.scrollOptionIntoView(sibling)
+  }
+}
+
 class InfiniteSelect extends Select {
   incrementActiveIndex () {
     const { activeIndex } = this.state
@@ -44,6 +69,34 @@ class InfiniteSelect extends Select {
     this.activeIndex(
       (decremented < this.lowerBound) ? this.upperBound : decremented
     )
+  }
+}
+
+class InfiniteSelectWithScrollIntoView extends InfiniteSelect {
+  handleKeyArrowUp () {
+    super.handleKeyArrowUp()
+
+    const sibling = this.getActiveOptionPreviousSibling()
+
+    if (sibling) this.scrollOptionIntoView(sibling)
+    else {
+      const sibling = this.getOptionsLastChild()
+
+      if (sibling) this.scrollOptionIntoView(sibling)
+    }
+  }
+
+  handleKeyArrowDown () {
+    super.handleKeyArrowDown()
+
+    const sibling = this.getActiveOptionNextSibling()
+
+    if (sibling) this.scrollOptionIntoView(sibling)
+    else {
+      const sibling = this.getOptionsFirstChild()
+
+      if (sibling) this.scrollOptionIntoView(sibling)
+    }
   }
 }
 
@@ -126,9 +179,7 @@ export default class IndexPage extends Component {
 
     return (
       <section>
-        <h1>
-          React Select Element
-        </h1>
+        <h1>React Select Element</h1>
 
         <div className='select'>
           <h2>Select Component</h2>
@@ -141,10 +192,46 @@ export default class IndexPage extends Component {
           />
         </div>
 
+        <div className='select-with-scroll-into-view'>
+          <h2>Select Component with Scroll Into View (A)</h2>
+          <p><em>Extends Select Component</em>.</p>
+          <SelectWithScrollIntoViewA
+            tabIndex={0}
+            accessKey='p'
+            index={index}
+            onChange={this.handleIndexChange}
+            options={options}
+          />
+        </div>
+
+        <div className='select-with-scroll-into-view'>
+          <h2>Select Component with Scroll Into View (B)</h2>
+          <p><em>Extends Select Component</em>.</p>
+          <SelectWithScrollIntoViewB
+            tabIndex={0}
+            accessKey='p'
+            index={index}
+            onChange={this.handleIndexChange}
+            options={options}
+          />
+        </div>
+
         <div className='infinite-select'>
           <h2>Infinite Select Component</h2>
-          <p><em>Extends Select Component</em>. </p>
+          <p><em>Extends Select Component</em>.</p>
           <InfiniteSelect
+            tabIndex={0}
+            accessKey='p'
+            index={index}
+            onChange={this.handleIndexChange}
+            options={options}
+          />
+        </div>
+
+        <div className='select-with-scroll-into-view'>
+          <h2>Infinite Select Component with Scroll Into View</h2>
+          <p><em>Extends Infinite Select Component</em>.</p>
+          <InfiniteSelectWithScrollIntoView
             tabIndex={0}
             accessKey='p'
             index={index}
@@ -155,7 +242,7 @@ export default class IndexPage extends Component {
 
         <div className='select-select'>
           <h2>Select Select Component</h2>
-          <p><em>Extends Select Component</em>. </p>
+          <p><em>Extends Select Component</em>.</p>
           <SelectSelect
             tabIndex={0}
             accessKey='p'
@@ -167,7 +254,7 @@ export default class IndexPage extends Component {
 
         <div className='hidden-select'>
           <h2>Hidden Select Component</h2>
-          <p><em>Composes Select Component</em>. </p>
+          <p><em>Composes Select Component</em>.</p>
           <HiddenSelect
             tabIndex={0}
             accessKey='p'

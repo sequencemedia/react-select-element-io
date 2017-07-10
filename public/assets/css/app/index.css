@@ -20,3 +20,8 @@
       border: 1px solid #ccc;
       margin: .5rem 0;
     }
+
+    .select-with-scroll-into-view .react-select-element ul {
+      max-height: 5em;
+      overflow-y: scroll;
+    }
