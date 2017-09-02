@@ -5,26 +5,26 @@ import Select from 'react-select-element'
 const index = 0
 const value = 'A'
 const options = [
-  { value: 'A', text: 'A' },
-  { value: 'AA', text: 'AA' },
-  { value: 'AAA', text: 'AAA' },
-  { value: 'AAAA', text: 'AAAA' },
-  { value: 'AAAAA', text: 'AAAAA' },
-  { value: 'B', text: 'B' },
-  { value: 'BB', text: 'BB' },
-  { value: 'BBB', text: 'BBB' },
-  { value: 'BBBB', text: 'BBBB' },
-  { value: 'BBBBB', text: 'BBBBB' },
-  { value: 'C', text: 'C' },
-  { value: 'CC', text: 'CC' },
-  { value: 'CCC', text: 'CCC' },
-  { value: 'CCCC', text: 'CCCC' },
-  { value: 'CCCCC', text: 'CCCCC' },
-  { value: 0, text: 1 },
-  { value: 1, text: 2 },
-  { value: 2, text: 3 },
-  { value: 3, text: 4 },
-  { value: 4, text: 5 }
+  { text: 'A' },
+  { text: 'AA' },
+  { text: 'AAA' },
+  { text: 'AAAA' },
+  { text: 'AAAAA' },
+  { text: 'B' },
+  { text: 'BB' },
+  { text: 'BBB' },
+  { text: 'BBBB' },
+  { text: 'BBBBB' },
+  { text: 'C' },
+  { text: 'CC' },
+  { text: 'CCC' },
+  { text: 'CCCC' },
+  { text: 'CCCCC' },
+  { text: 1 },
+  { text: 2 },
+  { text: 3 },
+  { text: 4 },
+  { text: 5 }
 ]
 
 class SelectWithScrollIntoViewA extends Select {

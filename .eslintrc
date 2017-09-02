@@ -15,5 +15,10 @@
   ],
   "rules": {
     "react/display-name": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }

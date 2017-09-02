@@ -2,15 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {
   Router
-} from '../app/components'
+} from 'react-select-element.io/client/app/components'
 
-const App = (
-  <Router />
-)
+{
+  const App = (
+    <Router />
+  )
 
-const app = document.getElementById('app')
+  const app = document.getElementById('app')
 
-ReactDOM.render(
-  App,
-  app
-)
+  ReactDOM.render(
+    App,
+    app
+  )
+}
