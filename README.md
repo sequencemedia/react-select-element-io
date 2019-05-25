@@ -1,6 +1,6 @@
 # react-select-element-io
 
-An example implementation of [react-select-element](https://github.com/sequencemedia/react-select-element).
+An example implementation of [React Select Element](https://github.com/sequencemedia/react-select-element).
 
 CD into the application root folder and in your terminal enter the commands:
 
