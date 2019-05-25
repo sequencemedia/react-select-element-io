@@ -1,33 +1,30 @@
 const path = require('path')
 
 const modulePath = process.cwd()
+const clientPath = path.resolve(modulePath, 'client')
 const serverPath = path.resolve(modulePath, 'server')
-const configPath = path.resolve(serverPath, 'config')
-const config = require(path.join(configPath, 'gulp'))
+const appPath = path.resolve('./app.js')
 
 const gulp = require('gulp')
-const webpack = require('webpack-stream')
 const server = require('gulp-develop-server')
 
 gulp
-  .task('default', ['webpack', 'watch', 'server', 'watch-server'], () => {
-    console.log('[React Select Element]')
+  .task('watch', () => gulp.watch([
+    clientPath.concat('/**/*'),
+    serverPath.concat('/**/*'),
+    appPath
+  ], { name: 'watch' }, (next) => {
+    server.restart()
+
+    return next()
+  }))
+
+gulp
+  .task('server', (next) => {
+    server.listen({ path: appPath })
+
+    return next()
   })
-  .task('webpack', () => (
-    gulp.src([])
-      .pipe(webpack(config.webpack.run))
-      .pipe(gulp.dest(config.public.app))
-  ))
-  .task('watch', () => {
-    gulp
-      .watch(config.client.app, ['webpack'])
-    gulp
-      .watch(path.resolve(serverPath, 'views/**/*.*'), server.restart)
-  })
-  .task('server', () => {
-    server.listen({ path: 'app' })
-  })
-  .task('watch-server', () => {
-    gulp
-      .watch(['app.js'], server.restart)
-  })
+
+gulp
+  .task('default', gulp.parallel('watch', 'server'))

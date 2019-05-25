@@ -1,7 +1,7 @@
-const Good = require('good')
+const Good = require('@hapi/good')
 
 export const good = {
-  register: Good,
+  plugin: Good,
   options: {
     ops: {
       interval: 1000
@@ -9,7 +9,7 @@ export const good = {
     reporters: {
       console: [
         {
-          module: 'good-squeeze',
+          module: '@hapi/good-squeeze',
           name: 'Squeeze',
           args: [
             {
@@ -18,7 +18,7 @@ export const good = {
             }
           ]
         }, {
-          module: 'good-console'
+          module: '@hapi/good-console'
         },
         'stdout'
       ]

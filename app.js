@@ -1,14 +1,14 @@
-require('babel-register')
+require('@babel/register')
 
 const path = require('path')
 
 const nconf = require('nconf')
 
-const Hapi = require('hapi')
-const Boom = require('boom')
+const Hapi = require('@hapi/hapi')
+const Boom = require('@hapi/boom')
+const inert = require('@hapi/inert')
+const vision = require('@hapi/vision')
 
-const inert = require('inert')
-const vision = require('vision')
 const hogan = require('hapi-hogan')
 
 const modulePath = process.cwd()
@@ -23,29 +23,29 @@ const config = require(configPath)()
 const {
   good
 } = require(path.join(configPath, 'good'))
+
 const {
   Renderer
 } = require('react-routes-renderer')
+
 const {
   Routes
-} = require(path.resolve(clientPath, 'app/components'))
-
-const server = new Hapi.Server()
-
-const renderer = new Renderer()
+} = require(path.join(clientPath, 'app/components'))
 
 nconf
   .argv().env()
   .defaults(config)
 
-server.connection(nconf.get('server:connection'))
+const server = Hapi.server(nconf.get('server'))
 
-server.register([good, inert, vision], (e) => {
-  if (e) throw e
+async function start () {
+  await server.register([good, inert, vision])
+
+  const renderer = new Renderer()
 
   server.views({
     relativeTo: modulePath,
-    path: path.resolve(serverPath, 'views'),
+    path: path.join(serverPath, 'views'),
     engines: {
       html: {
         module: hogan,
@@ -61,24 +61,11 @@ server.register([good, inert, vision], (e) => {
     {
       method: '*',
       path: '/',
-      config: {
-        handler: ({ url: { path } }, reply) => {
-          renderer.render(Routes, path)
-            .then(({ rendered: app }) => {
-              reply.view('index', { app })
-            })
-            .catch(reply)
-        }
-      }
-    },
-    {
-      method: 'GET',
-      path: '/favicon.ico',
-      config: {
-        handler: (request, reply) => {
-          reply(Boom.notFound())
-        }
-      }
+      handler: (request, h) => (
+        renderer.render(Routes, '/')
+          .then(({ rendered: app }) => h.view('index', { app }))
+          .catch(() => Boom.badImplementation())
+      )
     },
     {
       path: '/assets/{path*}',
@@ -92,8 +79,10 @@ server.register([good, inert, vision], (e) => {
       }
     }
   ])
-})
 
-server.start(() => {
-  server.log('info', `[React.Select.Element] ${server.info.uri}`)
-})
+  await server.start()
+
+  console.log(`\nreact-select-element-io [${server.info.uri}]\n`)
+}
+
+start()
