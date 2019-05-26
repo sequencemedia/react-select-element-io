@@ -1,4 +1,4 @@
-const Good = require('@hapi/good')
+import Good from '@hapi/good'
 
 export const good = {
   plugin: Good,

@@ -18,9 +18,7 @@ module.exports = {
   ],
   'plugins': [
     '@babel/proposal-export-default-from',
-    '@babel/proposal-do-expressions',
     '@babel/proposal-export-namespace-from',
-    '@babel/proposal-throw-expressions',
     [
       '@babel/proposal-class-properties',
       {
@@ -32,7 +30,7 @@ module.exports = {
         root: ['./'],
         cwd: 'babelrc',
         'alias': {
-          'react-select-element.io': './'
+          'react-select-element-io': './'
         }
       }
     ]

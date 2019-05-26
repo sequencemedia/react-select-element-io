@@ -2,7 +2,7 @@
 
 An example implementation of [React Select Element](https://github.com/sequencemedia/react-select-element).
 
-CD into the application root folder and in your terminal enter the commands:
+Change directory into the application root folder and in your terminal enter the commands:
 
 ```
 npm install

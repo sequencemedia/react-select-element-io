@@ -32,16 +32,28 @@ const {
   Routes
 } = require(path.join(clientPath, 'app/components'))
 
+const badImplementation = (e) => {
+  console.error(e)
+
+  return Boom.badImplementation()
+}
+
 nconf
   .argv().env()
   .defaults(config)
 
-const server = Hapi.server(nconf.get('server'))
-
-async function start () {
-  await server.register([good, inert, vision])
+async function start ({ host = 'localhost', port = 5000 }) {
+  const server = Hapi.server({ host, port })
 
   const renderer = new Renderer()
+
+  const handler = ({ url: { pathname = '/' } }, h) => (
+    renderer.render(Routes, pathname)
+      .then(({ rendered: app }) => h.view('index', { app }))
+      .catch(badImplementation)
+  )
+
+  await server.register([good, inert, vision])
 
   server.views({
     relativeTo: modulePath,
@@ -59,15 +71,6 @@ async function start () {
 
   server.route([
     {
-      method: '*',
-      path: '/',
-      handler: (request, h) => (
-        renderer.render(Routes, '/')
-          .then(({ rendered: app }) => h.view('index', { app }))
-          .catch(() => Boom.badImplementation())
-      )
-    },
-    {
       path: '/assets/{path*}',
       method: 'GET',
       handler: {
@@ -77,6 +80,10 @@ async function start () {
           index: false
         }
       }
+    }, {
+      method: '*',
+      path: '/',
+      handler
     }
   ])
 
@@ -85,4 +92,4 @@ async function start () {
   console.log(`\nreact-select-element-io [${server.info.uri}]\n`)
 }
 
-start()
+start(nconf.get('server'))

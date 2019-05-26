@@ -4,7 +4,7 @@ import {
   browserHistory
 } from 'react-router'
 
-import Routes from 'react-select-element.io/client/app/components/routes/routes'
+import Routes from 'react-select-element-io/client/app/components/routes/routes'
 
 export default () => (
   <Router history={browserHistory}>
