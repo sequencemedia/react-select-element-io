@@ -5,11 +5,10 @@ const path = require('path')
 const nconf = require('nconf')
 
 const Hapi = require('@hapi/hapi')
-const Boom = require('@hapi/boom')
 const inert = require('@hapi/inert')
 const vision = require('@hapi/vision')
 
-const hogan = require('hapi-hogan')
+const Handlebars = require('handlebars')
 
 const modulePath = process.cwd()
 const clientPath = path.resolve(modulePath, 'client')
@@ -25,18 +24,12 @@ const {
 } = require(path.join(configPath, 'good'))
 
 const {
-  Renderer
-} = require('react-routes-renderer')
+  renderToString
+} = require('@sequencemedia/react-router-render')
 
 const {
-  Routes
-} = require(path.join(clientPath, 'app/components'))
-
-const badImplementation = (e) => {
-  console.error(e)
-
-  return Boom.badImplementation()
-}
+  default: routes
+} = require(path.join(clientPath, 'app/components/routes'))
 
 nconf
   .argv().env()
@@ -45,13 +38,7 @@ nconf
 async function start ({ host = 'localhost', port = 5000 }) {
   const server = Hapi.server({ host, port })
 
-  const renderer = new Renderer()
-
-  const handler = ({ url: { pathname = '/' } }, h) => (
-    renderer.render(Routes, pathname)
-      .then(({ rendered: app }) => h.view('index', { app }))
-      .catch(badImplementation)
-  )
+  const handler = ({ url: { pathname = '/' } }, h) => h.view('index', { app: renderToString({ location: pathname }, routes) })
 
   await server.register([good, inert, vision])
 
@@ -60,7 +47,7 @@ async function start ({ host = 'localhost', port = 5000 }) {
     path: path.join(serverPath, 'views'),
     engines: {
       html: {
-        module: hogan,
+        module: Handlebars,
         compileMode: 'sync',
         compileOptions: {
           isCached: true

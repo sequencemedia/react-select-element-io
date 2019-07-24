@@ -1,13 +1,12 @@
 import React from 'react'
 import {
-  Router,
-  browserHistory
-} from 'react-router'
+  BrowserRouter as Router
+} from 'react-router-dom'
 
 import Routes from 'react-select-element-io/client/app/components/routes/routes'
 
 export default () => (
-  <Router history={browserHistory}>
+  <Router>
     {Routes}
   </Router>
 )

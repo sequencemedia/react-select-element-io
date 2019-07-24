@@ -6,7 +6,9 @@ require('@babel/register')({
 
 const path = require('path')
 
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin')
 const {
   EnvironmentPlugin
 } = require('webpack')
