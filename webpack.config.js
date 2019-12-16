@@ -12,7 +12,7 @@ const {
 const {
   EnvironmentPlugin
 } = require('webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const modulePath = process.cwd()
 const clientPath = path.resolve(modulePath, 'client')
@@ -40,6 +40,10 @@ module.exports = ({ NODE_ENV = 'production' } = process.env) => ({
     ]
   },
   devtool: 'source-map',
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()]
+  },
   plugins: [
     new CleanWebpackPlugin({
       verbose: false,
@@ -48,16 +52,6 @@ module.exports = ({ NODE_ENV = 'production' } = process.env) => ({
         path.join(assetsPath, 'js').concat('/*.js.map')
       ]
     }),
-    new EnvironmentPlugin({ NODE_ENV }),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        output: {
-          comments: false
-        }
-      },
-      parallel: true,
-      sourceMap: true,
-      cache: true
-    })
+    new EnvironmentPlugin({ NODE_ENV })
   ]
 })
