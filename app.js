@@ -10,6 +10,8 @@ const vision = require('@hapi/vision')
 
 const Handlebars = require('handlebars')
 
+const chalk = require('chalk')
+
 const modulePath = process.cwd()
 const clientPath = path.resolve(modulePath, 'client')
 const serverPath = path.resolve(modulePath, 'server')
@@ -76,7 +78,10 @@ async function start ({ host = 'localhost', port = 5000 }) {
 
   await server.start()
 
-  console.log(`\nreact-select-element-io [${server.info.uri}]\n`)
+  console.log(`
+    ${chalk.gray('react-select-element')} ${chalk.gray('[')}${chalk.white(server.info.protocol)}${chalk.gray('://')}${chalk.white(server.info.host)}${chalk.gray(':')}${chalk.white(server.info.port)}${chalk.gray(']')}
+    ${chalk.white(new Date(server.info.started))}
+  `)
 }
 
 start(nconf.get('server'))
