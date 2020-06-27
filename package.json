@@ -10,11 +10,14 @@
     "url": "http://sequencemedia.net"
   },
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=12.18.1"
+  },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -p",
     "start": "npm run build && node app",
     "dev": "cross-env NODE_ENV=development concurrently -r \"gulp\" \"webpack -d -w\"",
-    "lint": "eslint *.js client server",
+    "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "pre-commit": "npm run lint && npm run build && git add public"
   },
