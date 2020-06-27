@@ -11,7 +11,7 @@ module.exports = {
             'last 2 versions'
           ]
         },
-        corejs: '3'
+        corejs: 3
       }
     ],
     '@babel/react'
