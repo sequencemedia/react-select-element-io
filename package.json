@@ -22,11 +22,11 @@
     "pre-commit": "npm run lint && npm run build && git add public"
   },
   "dependencies": {
-    "@hapi/good": "^9.0.0",
-    "@hapi/good-console": "^9.0.0",
+    "@hapi/good": "^9.0.1",
+    "@hapi/good-console": "^9.0.1",
     "@hapi/good-squeeze": "^6.0.0",
     "@hapi/hapi": "^20.0.1",
-    "@hapi/inert": "^6.0.2",
+    "@hapi/inert": "^6.0.3",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^6.0.1",
     "@sequencemedia/react-router-render": "^1.0.14",
@@ -57,7 +57,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^5.3.0",
     "core-js": "^3.6.5",
-    "eslint": "^7.9.0",
+    "eslint": "^7.10.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-import": "^2.22.0",
