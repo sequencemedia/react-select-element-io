@@ -33,7 +33,7 @@
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
     "handlebars": "^4.7.6",
-    "moment": "^2.29.0",
+    "moment": "^2.29.1",
     "nconf": "^0.10.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
