@@ -29,7 +29,7 @@
     "@hapi/inert": "^6.0.3",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^6.0.1",
-    "@sequencemedia/react-router-render": "^1.0.15",
+    "@sequencemedia/react-router-render": "^1.0.16",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
     "handlebars": "^4.7.6",
