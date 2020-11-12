@@ -11,7 +11,7 @@
   },
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=12.9.0"
+    "node": ">=12.19.0"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --env prod",
