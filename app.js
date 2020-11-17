@@ -1,4 +1,7 @@
+require('module-alias/register')
 require('@babel/register')
+
+const debug = require('debug')
 
 const path = require('path')
 
@@ -10,28 +13,32 @@ const vision = require('@hapi/vision')
 
 const Handlebars = require('handlebars')
 
-const chalk = require('chalk')
-
-const modulePath = process.cwd()
-const clientPath = path.resolve(modulePath, 'client')
-const serverPath = path.resolve(modulePath, 'server')
-const publicPath = path.resolve(modulePath, 'public')
-const configPath = path.resolve(serverPath, 'config')
-const assetsPath = path.resolve(publicPath, 'assets')
-
-const config = require(configPath)()
-
-const {
-  good
-} = require(path.join(configPath, 'good'))
-
 const {
   renderToString
 } = require('@sequencemedia/react-router-render')
 
 const {
+  env: {
+    DEBUG = 'react-select-element-io'
+  }
+} = process
+
+debug.enable(DEBUG)
+
+const log = debug('react-select-element-io')
+
+log('`react-select-element-io` is awake')
+
+const modulePath = process.cwd()
+const serverPath = path.resolve(modulePath, 'server')
+const publicPath = path.resolve(modulePath, 'public')
+const assetsPath = path.resolve(publicPath, 'assets')
+
+const config = require('react-select-element-io/server/config')()
+
+const {
   default: routes
-} = require(path.join(clientPath, 'app/components/routes'))
+} = require('react-select-element-io/client/app/routes')
 
 nconf
   .argv().env()
@@ -40,9 +47,25 @@ nconf
 async function start ({ host = 'localhost', port = 5000 }) {
   const server = Hapi.server({ host, port })
 
+  server.events.on('start', () => {
+    const {
+      info
+    } = server
+
+    log(info)
+  })
+
+  server.events.on('stop', () => {
+    const {
+      info
+    } = server
+
+    log(info)
+  })
+
   const handler = ({ url: { pathname = '/' } }, h) => h.view('index', { app: renderToString({ location: pathname }, routes) })
 
-  await server.register([good, inert, vision])
+  await server.register([inert, vision])
 
   server.views({
     relativeTo: modulePath,
@@ -60,8 +83,13 @@ async function start ({ host = 'localhost', port = 5000 }) {
 
   server.route([
     {
-      path: '/assets/{path*}',
       method: 'GET',
+      path: '/favicon.ico',
+      handler: (request, h) => h.redirect('/assets/favicon.ico')
+    },
+    {
+      method: 'GET',
+      path: '/assets/{path*}',
       handler: {
         directory: {
           path: path.normalize(assetsPath),
@@ -77,11 +105,6 @@ async function start ({ host = 'localhost', port = 5000 }) {
   ])
 
   await server.start()
-
-  console.log(`
-    ${chalk.gray('react-select-element')} ${chalk.gray('[')}${chalk.white(server.info.protocol)}${chalk.gray('://')}${chalk.white(server.info.host)}${chalk.gray(':')}${chalk.white(server.info.port)}${chalk.gray(']')}
-    ${chalk.white(new Date(server.info.started))}
-  `)
 }
 
 start(nconf.get('server'))

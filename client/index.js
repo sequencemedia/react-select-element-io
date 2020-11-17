@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {
-  Router
-} from './app/components'
+import Router from './app/router'
 
 const App = (
   <Router />

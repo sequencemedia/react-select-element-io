@@ -22,9 +22,6 @@
     "pre-commit": "npm run lint && npm run build && git add public"
   },
   "dependencies": {
-    "@hapi/good": "^9.0.1",
-    "@hapi/good-console": "^9.0.1",
-    "@hapi/good-squeeze": "^6.0.0",
     "@hapi/hapi": "^20.0.2",
     "@hapi/inert": "^6.0.3",
     "@hapi/joi": "^17.1.1",
@@ -32,15 +29,17 @@
     "@sequencemedia/react-router-render": "^2.0.0",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
+    "debug": "^4.2.0",
     "handlebars": "^4.7.6",
+    "module-alias": "^2.2.2",
     "moment": "^2.29.1",
     "nconf": "^0.10.0",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-select-element": "^1.6.14"
+    "prop-types": "15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-select-element": "1.6.14"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
@@ -71,6 +70,9 @@
     "terser-webpack-plugin": "^5.0.3",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0"
+  },
+  "_moduleAliases": {
+    "react-select-element-io": "./"
   },
   "husky": {
     "hooks": {

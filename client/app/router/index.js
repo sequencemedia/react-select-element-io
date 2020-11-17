@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom'
 
-import Routes from 'react-select-element-io/client/app/components/routes/routes'
+import Routes from 'react-select-element-io/client/app/routes'
 
 export default () => (
   <Router>

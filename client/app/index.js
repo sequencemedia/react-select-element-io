@@ -1,2 +1,2 @@
-export Router from './components/router/router'
-export Routes from './components/routes/routes'
+export Router from './router'
+export Routes from './routes'
