@@ -22,7 +22,7 @@
     "pre-commit": "npm run lint && npm run build && git add public"
   },
   "dependencies": {
-    "@hapi/hapi": "^20.1.4",
+    "@hapi/hapi": "^20.1.5",
     "@hapi/inert": "^6.0.3",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^6.1.0",
@@ -55,7 +55,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "concurrently": "^6.2.0",
-    "core-js": "^3.15.1",
+    "core-js": "^3.15.2",
     "eslint": "^7.29.0",
     "eslint-import-resolver-babel-module": "^5.3.1",
     "gulp": "^4.0.2",
@@ -63,7 +63,7 @@
     "husky": "^6.0.0",
     "standard": "^16.0.3",
     "terser-webpack-plugin": "^5.1.4",
-    "webpack": "^5.40.0",
+    "webpack": "^5.41.1",
     "webpack-cli": "^4.7.2"
   },
   "_moduleAliases": {
