@@ -29,7 +29,7 @@
     "@sequencemedia/react-router-render": "^2.0.0",
     "chalk": "^4.1.1",
     "cross-env": "^7.0.3",
-    "debug": "^4.3.1",
+    "debug": "^4.3.2",
     "handlebars": "^4.7.7",
     "module-alias": "^2.2.2",
     "moment": "^2.29.1",
