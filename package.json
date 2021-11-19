@@ -62,7 +62,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
-    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react": "^7.27.1",
     "gulp": "^4.0.2",
     "gulp-develop-server": "^0.5.2",
     "husky": "^7.0.4",
