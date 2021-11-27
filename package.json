@@ -26,8 +26,8 @@
     "@hapi/inert": "^6.0.4",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^6.1.0",
-    "@sequencemedia/react-router-render": "^2.0.53",
-    "chalk": "^4.1.2",
+    "@sequencemedia/react-router-render": "^2.0.54",
+    "chalk": "^5.0.0",
     "cross-env": "^7.0.3",
     "debug": "^4.3.2",
     "handlebars": "^4.7.7",
@@ -39,7 +39,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "1.6.65"
+    "react-select-element": "1.6.66"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
