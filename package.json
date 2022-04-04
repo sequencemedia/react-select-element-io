@@ -32,14 +32,14 @@
     "debug": "^4.3.4",
     "handlebars": "^4.7.7",
     "module-alias": "^2.2.2",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "nconf": "^0.11.3",
     "prop-types": "15.7.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "1.6.160"
+    "react-select-element": "1.6.161"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
