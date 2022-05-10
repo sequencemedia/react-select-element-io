@@ -26,7 +26,7 @@
     "@hapi/inert": "^6.0.5",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^6.1.0",
-    "@sequencemedia/react-router-render": "^2.0.166",
+    "@sequencemedia/react-router-render": "^2.0.167",
     "chalk": "^5.0.1",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
@@ -39,7 +39,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "1.6.177"
+    "react-select-element": "1.6.178"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -55,8 +55,8 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "concurrently": "^7.1.0",
-    "core-js": "^3.22.4",
-    "eslint": "^8.14.0",
+    "core-js": "^3.22.5",
+    "eslint": "^8.15.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-import-resolver-babel-module": "^5.3.1",
     "eslint-plugin-import": "^2.26.0",
@@ -65,9 +65,9 @@
     "eslint-plugin-react": "^7.29.4",
     "gulp": "^4.0.2",
     "gulp-develop-server": "^0.5.2",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "terser-webpack-plugin": "^5.3.1",
-    "webpack": "^5.72.0",
+    "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
   },
   "_moduleAliases": {
