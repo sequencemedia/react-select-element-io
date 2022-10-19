@@ -40,7 +40,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "1.6.242"
+    "react-select-element": "2.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
