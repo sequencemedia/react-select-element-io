@@ -19,14 +19,15 @@
     "dev": "cross-env NODE_ENV=development concurrently -r \"gulp\" \"webpack -d -w\"",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "pre-commit": "npm run lint && npm run build && git add public"
+    "pre-commit": "npm run lint && npm run build && git add public",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.2",
     "@hapi/inert": "^7.0.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.0",
-    "@sequencemedia/react-router-render": "^2.0.256",
+    "@sequencemedia/react-router-render": "^2.0.257",
     "chalk": "^5.1.2",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
@@ -39,7 +40,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "1.7.2"
+    "react-select-element": "2.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
@@ -61,7 +62,7 @@
     "eslint-import-resolver-babel-module": "^5.3.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.0",
+    "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
     "gulp": "^4.0.2",
     "gulp-develop-server": "^0.5.2",
