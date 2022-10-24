@@ -18,6 +18,14 @@ const {
 } = require('@sequencemedia/react-router-render')
 
 const {
+  default: config
+} = require('react-select-element-io/server/config')
+
+const {
+  default: routes
+} = require('react-select-element-io/client/routes')
+
+const {
   env: {
     DEBUG = 'react-select-element-io'
   }
@@ -34,17 +42,11 @@ const serverPath = path.resolve(modulePath, 'server')
 const publicPath = path.resolve(modulePath, 'public')
 const assetsPath = path.resolve(publicPath, 'assets')
 
-const config = require('react-select-element-io/server/config')()
-
-const {
-  default: routes
-} = require('react-select-element-io/client/app/routes')
-
 nconf
   .argv().env()
   .defaults(config)
 
-async function start ({ host = 'localhost', port = 5000 }) {
+async function start ({ host = 'localhost', port = 5000 } = {}) {
   const server = Hapi.server({ host, port })
 
   server.events.on('start', () => {
@@ -62,8 +64,6 @@ async function start ({ host = 'localhost', port = 5000 }) {
 
     log(info)
   })
-
-  const handler = ({ url: { pathname = '/' } }, h) => h.view('index', { app: renderToString({ location: pathname }, routes) })
 
   await server.register([inert, vision])
 
@@ -85,7 +85,9 @@ async function start ({ host = 'localhost', port = 5000 }) {
     {
       method: 'GET',
       path: '/favicon.ico',
-      handler: (request, h) => h.redirect('/assets/favicon.ico')
+      handler (request, h) {
+        return h.redirect('/assets/favicon.ico')
+      }
     },
     {
       method: 'GET',
@@ -100,7 +102,9 @@ async function start ({ host = 'localhost', port = 5000 }) {
     }, {
       method: '*',
       path: '/',
-      handler
+      handler ({ url: { pathname = '/' } }, h) {
+        return h.view('index', { app: renderToString({ location: pathname }, routes) })
+      }
     }
   ])
 

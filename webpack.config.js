@@ -17,7 +17,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 
 const modulePath = process.cwd()
 const clientPath = path.resolve(modulePath, 'client')
-const assetsPath = path.resolve(modulePath, 'public/assets')
+const assetsPath = path.resolve(modulePath, 'public/assets/js')
 
 module.exports = ({ NODE_ENV = 'production' } = process.env) => ({
   mode: NODE_ENV,
@@ -25,7 +25,7 @@ module.exports = ({ NODE_ENV = 'production' } = process.env) => ({
     app: path.resolve(clientPath, 'index.js')
   },
   output: {
-    path: path.join(assetsPath, 'js'),
+    path: path.join(assetsPath),
     filename: '[name].js'
   },
   stats: {
@@ -35,7 +35,9 @@ module.exports = ({ NODE_ENV = 'production' } = process.env) => ({
     rules: [
       {
         test: /\.js?$/,
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader'
+        },
         exclude: /node_modules/
       }
     ]
@@ -44,8 +46,8 @@ module.exports = ({ NODE_ENV = 'production' } = process.env) => ({
     new CleanWebpackPlugin({
       verbose: false,
       cleanOnceBeforeBuildPatterns: [
-        path.join(assetsPath, 'js').concat('/*.js'),
-        path.join(assetsPath, 'js').concat('/*.js.map')
+        path.join(assetsPath).concat('/*.js'),
+        path.join(assetsPath).concat('/*.js.map')
       ]
     }),
     new EnvironmentPlugin({ NODE_ENV }),

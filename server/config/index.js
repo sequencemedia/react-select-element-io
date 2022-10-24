@@ -1,19 +1,18 @@
 
-module.exports = () => {
-  switch (process.env.NODE_ENV) {
-    case 'production':
-      return {
-        server: {
-          host: 'localhost',
-          port: process.env.PORT
-        }
-      }
-    default:
-      return {
-        server: {
-          host: 'localhost',
-          port: 5000
-        }
-      }
+const {
+  env: {
+    NODE_ENV = 'development',
+    PORT = 5000
+  }
+} = process
+
+export default {
+  server: {
+    host: 'localhost',
+    port: (
+      NODE_ENV === 'production'
+        ? PORT
+        : 5000
+    )
   }
 }

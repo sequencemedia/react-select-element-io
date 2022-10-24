@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --env prod",
-    "start": "npm run build && node app",
+    "start": "cross-env NODE_ENV=production node .",
     "dev": "cross-env NODE_ENV=development concurrently -r \"gulp\" \"webpack -d -w\"",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
@@ -40,7 +40,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "2.0.9"
+    "react-select-element": "2.0.14"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",

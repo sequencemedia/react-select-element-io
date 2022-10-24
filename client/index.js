@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Router from './app/router'
+import Router from './router'
 
 const App = (
   <Router />

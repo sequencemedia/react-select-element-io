@@ -14,7 +14,12 @@ module.exports = {
         corejs: 3
       }
     ],
-    '@babel/react'
+    [
+      '@babel/react',
+      {
+        runtime: 'automatic'
+      }
+    ]
   ],
   plugins: [
     '@babel/proposal-export-default-from',

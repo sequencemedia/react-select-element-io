@@ -29,8 +29,9 @@ const options = [
 
 class SelectWithScrollIntoViewA extends Select {
   componentDidUpdate () {
-    const { activeOption } = this
-    if (activeOption) this.scrollOptionIntoView(activeOption)
+    const element = this.getActiveOption()
+
+    if (element) this.scrollOptionIntoView(element)
   }
 }
 
@@ -127,9 +128,9 @@ class HiddenSelect extends Component {
 
   handleIndexChange = (index) => {
     const { options, onChange } = this.props
-    const { value } = options[index]
+    const { text } = options[index]
 
-    this.setState({ value })
+    this.setState({ value: text })
     onChange(index)
   }
 
