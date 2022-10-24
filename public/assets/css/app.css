@@ -1,27 +1,27 @@
 
-    section > div {
-      padding: .5rem;
-      border-radius: 4px;
-    }
+  section > div {
+    padding: .5rem;
+    border-radius: 4px;
+  }
 
-    section > div > h2 {
-      color: #333;
-      margin-top: .5rem;
-    }
+  section > div > h2 {
+    color: #333;
+    margin-top: .5rem;
+  }
 
-    section > div:nth-child(odd) {
-      background-color: #eee;
-      border: 1px solid #ddd;
-      margin: .5rem 0;
-    }
+  section > div:nth-child(odd) {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    margin: .5rem 0;
+  }
 
-    section > div:nth-child(even) {
-      background-color: #ddd;
-      border: 1px solid #ccc;
-      margin: .5rem 0;
-    }
+  section > div:nth-child(even) {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    margin: .5rem 0;
+  }
 
-    .select-with-scroll-into-view .react-select-element ul {
-      max-height: 5em;
-      overflow-y: scroll;
-    }
+  .select-with-scroll-into-view .react-select-element ul {
+    max-height: 5em;
+    overflow-y: scroll;
+  }

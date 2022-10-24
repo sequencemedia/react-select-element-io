@@ -28,7 +28,7 @@ const {
 const {
   env: {
     DEBUG = 'react-select-element-io'
-  }
+  } = {}
 } = process
 
 debug.enable(DEBUG)
