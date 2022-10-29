@@ -14,9 +14,9 @@
     "node": ">=16.13.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --env prod",
+    "build": "cross-env NODE_ENV=production webpack",
     "start": "cross-env NODE_ENV=production node .",
-    "dev": "cross-env NODE_ENV=development concurrently -r \"gulp\" \"webpack -d -w\"",
+    "dev": "cross-env NODE_ENV=development concurrently -r \"gulp\" \"webpack --watch\"",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "pre-commit": "npm run lint && npm run build && git add public",

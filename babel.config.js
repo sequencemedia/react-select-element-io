@@ -32,7 +32,7 @@ module.exports = {
     ],
     [
       'module-resolver', {
-        root: ['./'],
+        root: ['.'],
         cwd: 'babelrc',
         alias: {
           'react-select-element-io': './'

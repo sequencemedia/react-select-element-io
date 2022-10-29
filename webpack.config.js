@@ -17,17 +17,22 @@ const {
 
 const TerserPlugin = require('terser-webpack-plugin')
 
-const modulePath = process.cwd()
-const clientPath = path.resolve(modulePath, 'client')
-const assetsPath = path.resolve(modulePath, 'public/assets/js')
+const clientPath = path.resolve('./client')
+const assetsPath = path.resolve('./public/assets/js')
 
-module.exports = ({ NODE_ENV = 'production' } = process.env) => ({
-  mode: NODE_ENV,
+const {
+  env: {
+    NODE_ENV = 'production'
+  } = {}
+} = process
+
+module.exports = (env, { mode = NODE_ENV } = {}) => ({
+  mode,
   entry: {
-    app: path.resolve(clientPath, 'index.js')
+    app: path.join(clientPath, 'index.js')
   },
   output: {
-    path: path.join(assetsPath),
+    path: assetsPath,
     filename: '[name].js'
   },
   stats: {
@@ -48,8 +53,8 @@ module.exports = ({ NODE_ENV = 'production' } = process.env) => ({
     new CleanWebpackPlugin({
       verbose: false,
       cleanOnceBeforeBuildPatterns: [
-        path.join(assetsPath).concat('/*.js'),
-        path.join(assetsPath).concat('/*.js.map')
+        path.join(assetsPath, '*.js'),
+        path.join(assetsPath, '*.js.map')
       ]
     }),
     new EnvironmentPlugin({ NODE_ENV }),
