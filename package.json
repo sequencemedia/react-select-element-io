@@ -38,7 +38,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "2.0.35"
+    "react-select-element": "2.0.36"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
@@ -67,7 +67,7 @@
     "husky": "^8.0.2",
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^5.0.0"
   },
   "_moduleAliases": {
     "react-select-element-io": "./"
