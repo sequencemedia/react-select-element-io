@@ -23,11 +23,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@hapi/hapi": "^21.2.2",
+    "@hapi/hapi": "^21.3.0",
     "@hapi/inert": "^7.0.1",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.1",
-    "@sequencemedia/react-router-render": "^2.0.329",
+    "@sequencemedia/react-router-render": "^2.0.330",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.7",
