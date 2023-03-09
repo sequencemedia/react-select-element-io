@@ -27,7 +27,7 @@
     "@hapi/inert": "^7.0.1",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.1",
-    "@sequencemedia/react-router-render": "^2.0.349",
+    "@sequencemedia/react-router-render": "^2.0.350",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.7",
@@ -65,8 +65,8 @@
     "gulp": "^4.0.2",
     "gulp-develop-server": "^0.5.2",
     "husky": "^8.0.3",
-    "terser-webpack-plugin": "^5.3.6",
-    "webpack": "^5.75.0",
+    "terser-webpack-plugin": "^5.3.7",
+    "webpack": "^5.76.0",
     "webpack-cli": "^5.0.1"
   },
   "_moduleAliases": {
