@@ -24,10 +24,10 @@
   },
   "dependencies": {
     "@hapi/hapi": "^21.3.0",
-    "@hapi/inert": "^7.0.1",
+    "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.1",
-    "@sequencemedia/react-router-render": "^2.0.353",
+    "@sequencemedia/react-router-render": "^2.0.354",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.7",
@@ -38,7 +38,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "2.0.125"
+    "react-select-element": "2.0.126"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -54,7 +54,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "concurrently": "^7.6.0",
-    "core-js": "^3.29.0",
+    "core-js": "^3.29.1",
     "eslint": "^8.36.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-import-resolver-babel-module": "^5.3.2",
