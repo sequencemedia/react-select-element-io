@@ -29,6 +29,12 @@ const plugins = [
     }
   ],
   [
+    'minify-dead-code-elimination',
+    {
+      optimizeRawSize: true
+    }
+  ],
+  [
     'module-resolver', {
       root: ['.'],
       cwd: 'babelrc',
