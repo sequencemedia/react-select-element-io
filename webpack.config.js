@@ -29,7 +29,21 @@ const {
 module.exports = (env, { mode = NODE_ENV } = {}) => ({
   mode,
   entry: {
-    app: path.join(clientPath, 'index.js')
+    app: {
+      import: [
+        path.join(clientPath, 'index.js')
+      ],
+      dependOn: [
+        'vendors'
+      ]
+    },
+    vendors: [
+      'react',
+      'react-dom',
+      'prop-types',
+      'react-router',
+      'react-router-dom'
+    ]
   },
   output: {
     path: assetsPath,
@@ -61,6 +75,7 @@ module.exports = (env, { mode = NODE_ENV } = {}) => ({
     new SourceMapDevToolPlugin({ filename: '[name].js.map' })
   ],
   optimization: {
+    runtimeChunk: 'single',
     minimize: true,
     minimizer: [
       new TerserPlugin()
