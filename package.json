@@ -14,7 +14,7 @@
     "node": ">=16.13.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack --env prod",
     "start": "cross-env NODE_ENV=production node .",
     "dev": "cross-env NODE_ENV=development concurrently -r \"gulp\" \"webpack --watch\"",
     "lint": "eslint .",
@@ -27,7 +27,7 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.1",
-    "@sequencemedia/react-router-render": "^2.0.367",
+    "@sequencemedia/react-router-render": "^2.0.368",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.7",
@@ -38,16 +38,16 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "2.0.141"
+    "react-select-element": "2.0.144"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.21.4",
     "@babel/eslint-parser": "^7.21.3",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-export-default-from": "^7.18.10",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
-    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
     "@babel/register": "^7.21.0",
     "babel-loader": "^9.1.2",
