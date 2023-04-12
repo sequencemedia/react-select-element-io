@@ -67,7 +67,7 @@
     "gulp-develop-server": "^0.5.2",
     "husky": "^8.0.3",
     "terser-webpack-plugin": "^5.3.7",
-    "webpack": "^5.78.0",
+    "webpack": "^5.79.0",
     "webpack-cli": "^5.0.1"
   },
   "_moduleAliases": {
