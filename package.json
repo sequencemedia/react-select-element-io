@@ -56,7 +56,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "concurrently": "^8.0.1",
     "core-js": "^3.30.1",
-    "eslint": "^8.38.0",
+    "eslint": "^8.39.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-import-resolver-babel-module": "^5.3.2",
     "eslint-plugin-import": "^2.27.5",
@@ -68,7 +68,7 @@
     "husky": "^8.0.3",
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.80.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.2"
   },
   "_moduleAliases": {
     "react-select-element-io": "./"
