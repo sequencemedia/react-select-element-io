@@ -25,7 +25,7 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.1",
-    "@sequencemedia/react-router-render": "^2.0.390",
+    "@sequencemedia/react-router-render": "^2.0.392",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.7",
@@ -36,7 +36,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "2.0.164"
+    "react-select-element": "2.0.165"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -48,7 +48,7 @@
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
     "@babel/register": "^7.21.0",
-    "@sequencemedia/hooks": "^1.0.395",
+    "@sequencemedia/hooks": "^1.0.396",
     "babel-loader": "^9.1.2",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
     "babel-plugin-module-resolver": "^5.0.0",
