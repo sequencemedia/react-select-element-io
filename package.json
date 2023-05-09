@@ -25,7 +25,7 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.1",
-    "@sequencemedia/react-router-render": "^2.0.405",
+    "@sequencemedia/react-router-render": "^2.0.407",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.7",
@@ -36,7 +36,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "2.0.178"
+    "react-select-element": "2.0.179"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",
@@ -65,7 +65,7 @@
     "husky": "^8.0.3",
     "terser-webpack-plugin": "^5.3.8",
     "webpack": "^5.82.0",
-    "webpack-cli": "^5.1.0"
+    "webpack-cli": "^5.1.1"
   },
   "_moduleAliases": {
     "react-select-element-io": "./"
