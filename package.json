@@ -54,7 +54,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.30.2",
-    "eslint": "^8.40.0",
+    "eslint": "^8.41.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-import-resolver-babel-module": "^5.3.2",
     "eslint-plugin-import": "^2.27.5",
@@ -63,8 +63,8 @@
     "eslint-plugin-react": "^7.32.2",
     "gulp-develop-server": "^0.5.2",
     "husky": "^8.0.3",
-    "terser-webpack-plugin": "^5.3.8",
-    "webpack": "^5.82.1",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1"
   },
   "_moduleAliases": {
