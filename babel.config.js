@@ -36,8 +36,6 @@ const plugins = [
   ],
   [
     'module-resolver', {
-      root: ['.'],
-      cwd: 'babelrc',
       alias: {
         'react-select-element-io': './'
       }
