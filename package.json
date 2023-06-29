@@ -36,7 +36,7 @@
     "react-dom": "16.14.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-select-element": "2.0.213"
+    "react-select-element": "2.0.214"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.5",
@@ -48,7 +48,7 @@
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
     "@babel/register": "^7.22.5",
-    "@sequencemedia/hooks": "^1.0.436",
+    "@sequencemedia/hooks": "^1.0.437",
     "babel-loader": "^9.1.2",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
     "babel-plugin-module-resolver": "^5.0.0",
