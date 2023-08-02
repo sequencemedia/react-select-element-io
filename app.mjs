@@ -1,29 +1,22 @@
-require('module-alias/register')
-require('@babel/register')
+import debug from 'debug'
 
-const debug = require('debug')
+import path from 'path'
 
-const path = require('path')
+import nconf from 'nconf'
 
-const nconf = require('nconf')
+import Hapi from '@hapi/hapi'
+import inert from '@hapi/inert'
+import vision from '@hapi/vision'
 
-const Hapi = require('@hapi/hapi')
-const inert = require('@hapi/inert')
-const vision = require('@hapi/vision')
+import Handlebars from 'handlebars'
 
-const Handlebars = require('handlebars')
-
-const {
+import {
   renderToString
-} = require('@sequencemedia/react-router-render')
+} from '@sequencemedia/react-router-render'
 
-const {
-  default: config
-} = require('react-select-element-io/server/config')
+import config from './server/config/index.mjs'
 
-const {
-  default: routes
-} = require('react-select-element-io/client/routes')
+import routes from './client/routes/index.cjs'
 
 const {
   env: {

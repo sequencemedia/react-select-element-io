@@ -3,7 +3,7 @@ import {
   Route
 } from 'react-router'
 
-import IndexPage from 'react-select-element-io/client/components/index-page'
+import IndexPage from '#client/components/index-page'
 
 export default (
   <Route exact path='/' component={IndexPage} />

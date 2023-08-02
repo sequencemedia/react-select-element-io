@@ -1,3 +1,23 @@
+const debug = require('debug')
+
+const log = debug('react-select-element-io')
+
+log('`react-select-element-io` is awake')
+
+const {
+  env: {
+    NODE_ENV = 'development'
+  }
+} = process
+
+function env () {
+  log({ NODE_ENV })
+
+  return (
+    NODE_ENV === 'production'
+  )
+}
+
 const presets = [
   [
     '@babel/env', {
@@ -20,30 +40,19 @@ const presets = [
 ]
 
 const plugins = [
-  '@babel/proposal-export-default-from',
-  '@babel/proposal-export-namespace-from',
-  [
-    '@babel/proposal-class-properties',
-    {
-      loose: false
-    }
-  ],
   [
     'minify-dead-code-elimination',
     {
       optimizeRawSize: true
     }
-  ],
-  [
-    'module-resolver', {
-      alias: {
-        'react-select-element-io': './'
-      }
-    }
   ]
 ]
 
-module.exports = {
-  presets,
-  plugins
+module.exports = (api) => {
+  if (api) api.cache.using(env)
+
+  return {
+    presets,
+    plugins
+  }
 }
