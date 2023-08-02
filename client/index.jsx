@@ -2,13 +2,12 @@ import React from 'react'
 import {
   createRoot
 } from 'react-dom/client'
-import Router from './router/index.jsx'
 
-function App () {
-  return <Router />
-}
+import IndexPage from '#client/components/index-page'
 
 const app = document.getElementById('app')
 
 createRoot(app)
-  .render(<App />)
+  .render(
+    <IndexPage />
+  )

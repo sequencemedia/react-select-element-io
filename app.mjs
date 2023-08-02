@@ -12,11 +12,11 @@ import Handlebars from 'handlebars'
 
 import {
   renderToString
-} from '@sequencemedia/react-router-render'
+} from '@sequencemedia/react-render'
 
 import config from './server/config/index.mjs'
 
-import routes from './client/routes/index.cjs'
+import IndexPage from './client/components/index-page/index.cjs'
 
 const {
   env: {
@@ -95,8 +95,8 @@ async function start ({ host = 'localhost', port = 5000 } = {}) {
     }, {
       method: '*',
       path: '/',
-      handler ({ url: { pathname = '/' } }, h) {
-        return h.view('index', { app: renderToString({ location: pathname }, routes) })
+      handler (req, h) {
+        return h.view('index', { app: renderToString(IndexPage) })
       }
     }
   ])

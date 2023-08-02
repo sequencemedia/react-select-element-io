@@ -37,9 +37,7 @@ export default function common (env, { mode = NODE_ENV } = {}) {
       vendors: [
         'react',
         'react-dom',
-        'prop-types',
-        'react-router',
-        'react-router-dom'
+        'prop-types'
       ]
     },
     output: {
