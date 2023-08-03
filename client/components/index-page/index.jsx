@@ -185,6 +185,7 @@ export default class IndexPage extends Component {
         <div className='select'>
           <h2>Select Component</h2>
           <Select
+            id='select'
             tabIndex={0}
             accessKey='p'
             index={index}
@@ -197,6 +198,7 @@ export default class IndexPage extends Component {
           <h2>Select Component with Scroll Into View (A)</h2>
           <p><em>Extends Select Component</em>.</p>
           <SelectWithScrollIntoViewA
+            id='select-with-scroll-into-view-a'
             tabIndex={0}
             accessKey='p'
             index={index}
@@ -209,6 +211,7 @@ export default class IndexPage extends Component {
           <h2>Select Component with Scroll Into View (B)</h2>
           <p><em>Extends Select Component</em>.</p>
           <SelectWithScrollIntoViewB
+            id='select-with-scroll-into-view-b'
             tabIndex={0}
             accessKey='p'
             index={index}
@@ -221,6 +224,7 @@ export default class IndexPage extends Component {
           <h2>Infinite Select Component</h2>
           <p><em>Extends Select Component</em>.</p>
           <InfiniteSelect
+            id='infinite-select'
             tabIndex={0}
             accessKey='p'
             index={index}
@@ -233,6 +237,7 @@ export default class IndexPage extends Component {
           <h2>Infinite Select Component with Scroll Into View</h2>
           <p><em>Extends Infinite Select Component</em>.</p>
           <InfiniteSelectWithScrollIntoView
+            id='infinite-select-with-scroll-into-view'
             tabIndex={0}
             accessKey='p'
             index={index}
@@ -245,6 +250,7 @@ export default class IndexPage extends Component {
           <h2>Select Select Component</h2>
           <p><em>Extends Select Component</em>.</p>
           <SelectSelect
+            id='select-select'
             tabIndex={0}
             accessKey='p'
             index={index}
@@ -257,6 +263,7 @@ export default class IndexPage extends Component {
           <h2>Hidden Select Component</h2>
           <p><em>Composes Select Component</em>.</p>
           <HiddenSelect
+            id='hidden-select'
             tabIndex={0}
             accessKey='p'
             index={index}
