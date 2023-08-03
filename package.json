@@ -4,6 +4,7 @@
   "description": "React Select Element",
   "private": true,
   "main": "./app.mjs",
+  "type": "module",
   "author": {
     "name": "Jonathan Perry for Sequence Media Limited",
     "email": "sequencemedia@sequencemedia.net",
