@@ -15,9 +15,11 @@
     "node": ">=16.13.0"
   },
   "scripts": {
+    "build:dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
+    "start:dev": "cross-env NODE_ENV=development node .",
     "start": "cross-env NODE_ENV=production node .",
-    "lint": "eslint . --ext .cjs,.mjs",
+    "lint": "eslint . --ext .mjs,.cjs,.jsx",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install"
   },
