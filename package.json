@@ -28,7 +28,7 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.2.33",
+    "@sequencemedia/react-render": "^2.2.34",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.8",
@@ -37,7 +37,7 @@
     "prop-types": "15.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-select-element": "2.5.10"
+    "react-select-element": "2.5.11"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
@@ -45,11 +45,11 @@
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-react": "^7.22.5",
     "@babel/register": "^7.22.5",
-    "@sequencemedia/hooks": "^1.0.446",
+    "@sequencemedia/hooks": "^1.0.447",
     "babel-loader": "^9.1.3",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
     "clean-webpack-plugin": "^4.0.0",
-    "core-js": "^3.32.0",
+    "core-js": "^3.32.1",
     "eslint": "^8.47.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-react": "^7.33.2",
