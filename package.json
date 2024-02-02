@@ -1,6 +1,6 @@
 {
   "name": "react-select-element-io",
-  "version": "1.2.97",
+  "version": "1.2.98",
   "description": "React Select Element",
   "private": true,
   "main": "./app.mjs",
