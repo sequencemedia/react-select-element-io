@@ -15,20 +15,20 @@
     "node": ">=16.20.1"
   },
   "scripts": {
-    "build:dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "start:dev": "cross-env NODE_ENV=development node .",
-    "start": "cross-env NODE_ENV=production node .",
+    "build:dev": "cross-env NODE_ENV=development webpack --mode development",
     "lint": "eslint . --ext .mjs,.cjs,.jsx",
     "lint:fix": "npm run lint -- --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "cross-env NODE_ENV=production node .",
+    "start:dev": "cross-env NODE_ENV=development node ."
   },
   "dependencies": {
     "@hapi/hapi": "^21.3.9",
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.2.98",
+    "@sequencemedia/react-render": "^2.2.99",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.8",
@@ -37,7 +37,7 @@
     "prop-types": "15.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-select-element": "2.7.51"
+    "react-select-element": "2.7.52"
   },
   "devDependencies": {
     "@babel/core": "^7.24.6",
