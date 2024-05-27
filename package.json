@@ -12,7 +12,7 @@
   },
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=16.20.1"
+    "node": ">=18.12.0"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
@@ -28,7 +28,7 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.2.99",
+    "@sequencemedia/react-render": "^2.2.100",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "handlebars": "^4.7.8",
@@ -45,7 +45,7 @@
     "@babel/preset-env": "^7.24.6",
     "@babel/preset-react": "^7.24.6",
     "@babel/register": "^7.24.6",
-    "@sequencemedia/hooks": "^1.0.492",
+    "@sequencemedia/hooks": "^1.0.493",
     "babel-loader": "^9.1.3",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
     "clean-webpack-plugin": "^4.0.0",
