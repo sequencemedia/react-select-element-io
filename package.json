@@ -24,7 +24,7 @@
     "start:dev": "cross-env NODE_ENV=development node ."
   },
   "dependencies": {
-    "@hapi/hapi": "^21.3.9",
+    "@hapi/hapi": "^21.3.10",
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.3",
@@ -37,7 +37,7 @@
     "prop-types": "15.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-select-element": "2.7.58"
+    "react-select-element": "2.7.59"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
