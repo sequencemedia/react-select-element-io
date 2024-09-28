@@ -45,7 +45,7 @@
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
     "@babel/register": "^7.24.6",
-    "@sequencemedia/hooks": "^1.0.562",
+    "@sequencemedia/hooks": "^1.0.563",
     "babel-loader": "^9.2.1",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
     "clean-webpack-plugin": "^4.0.0",
