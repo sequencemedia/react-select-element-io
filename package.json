@@ -28,7 +28,7 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.2.182",
+    "@sequencemedia/react-render": "^2.2.183",
     "cross-env": "^7.0.3",
     "debug": "^4.3.7",
     "handlebars": "^4.7.8",
@@ -40,9 +40,9 @@
     "react-select-element": "2.7.139"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.9",
+    "@babel/core": "^7.26.0",
     "@babel/eslint-parser": "^7.25.9",
-    "@babel/preset-env": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@babel/register": "^7.25.9",
     "babel-loader": "^9.2.1",
