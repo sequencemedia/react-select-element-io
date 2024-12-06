@@ -28,22 +28,22 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.3.2",
+    "@sequencemedia/react-render": "^2.3.4",
     "cross-env": "^7.0.3",
     "debug": "^4.3.7",
     "handlebars": "^4.7.8",
     "module-alias": "^2.2.3",
     "nconf": "^0.12.1",
     "prop-types": "15.7.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-select-element": "2.7.149"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-select-element": "2.7.150"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/eslint-parser": "^7.25.9",
     "@babel/preset-env": "^7.26.0",
-    "@babel/preset-react": "^7.25.9",
+    "@babel/preset-react": "^7.26.3",
     "@babel/register": "^7.25.9",
     "babel-loader": "^9.2.1",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
@@ -54,7 +54,7 @@
     "eslint-plugin-react": "^7.37.2",
     "husky": "^9.1.7",
     "terser-webpack-plugin": "^5.3.10",
-    "webpack": "^5.97.0",
+    "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   },
   "imports": {
