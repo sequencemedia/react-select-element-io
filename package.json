@@ -27,7 +27,7 @@
     "@hapi/hapi": "^21.4.0",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.4.20",
+    "@sequencemedia/react-render": "^2.4.21",
     "cross-env": "^7.0.3",
     "debug": "^4.4.0",
     "handlebars": "^4.7.8",
