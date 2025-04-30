@@ -48,7 +48,7 @@
     "babel-loader": "^10.0.0",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
     "clean-webpack-plugin": "^4.0.0",
-    "core-js": "^3.41.0",
+    "core-js": "^3.42.0",
     "eslint": "8.57.1",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-react": "^7.37.5",
