@@ -27,7 +27,7 @@
     "@hapi/hapi": "^21.4.0",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.4.79",
+    "@sequencemedia/react-render": "^2.4.80",
     "cross-env": "^7.0.3",
     "debug": "^4.4.1",
     "handlebars": "^4.7.8",
@@ -54,7 +54,7 @@
     "eslint-plugin-react": "^7.37.5",
     "husky": "^9.1.7",
     "terser-webpack-plugin": "^5.3.14",
-    "webpack": "^5.100.1",
+    "webpack": "^5.100.2",
     "webpack-cli": "^6.0.1"
   },
   "imports": {
