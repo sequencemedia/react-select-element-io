@@ -27,7 +27,7 @@
     "@hapi/hapi": "^21.4.0",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.4.80",
+    "@sequencemedia/react-render": "^2.4.82",
     "cross-env": "^7.0.3",
     "debug": "^4.4.1",
     "handlebars": "^4.7.8",
@@ -37,7 +37,7 @@
     "prop-types": "15.7.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-select-element": "2.8.95"
+    "react-select-element": "2.8.96"
   },
   "devDependencies": {
     "@babel/core": "^7.28.0",
