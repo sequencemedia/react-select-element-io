@@ -27,7 +27,7 @@
     "@hapi/hapi": "^21.4.0",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.4.89",
+    "@sequencemedia/react-render": "^2.4.90",
     "cross-env": "^10.0.0",
     "debug": "^4.4.1",
     "handlebars": "^4.7.8",
@@ -35,8 +35,8 @@
     "module-alias": "^2.2.3",
     "nconf": "^0.13.0",
     "prop-types": "15.7.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-select-element": "2.8.99"
   },
   "devDependencies": {
@@ -54,7 +54,7 @@
     "eslint-plugin-react": "^7.37.5",
     "husky": "^9.1.7",
     "terser-webpack-plugin": "^5.3.14",
-    "webpack": "^5.100.2",
+    "webpack": "^5.101.0",
     "webpack-cli": "^6.0.1"
   },
   "imports": {
