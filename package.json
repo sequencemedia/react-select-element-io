@@ -24,20 +24,20 @@
     "start:dev": "cross-env NODE_ENV=development node ."
   },
   "dependencies": {
-    "@hapi/hapi": "^21.4.0",
+    "@hapi/hapi": "^21.4.3",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
-    "@sequencemedia/react-render": "^2.4.93",
+    "@sequencemedia/react-render": "^2.4.98",
     "cross-env": "^10.0.0",
     "debug": "^4.4.1",
     "handlebars": "^4.7.8",
-    "joi": "^18.0.0",
+    "joi": "^18.0.1",
     "module-alias": "^2.2.3",
     "nconf": "^0.13.0",
     "prop-types": "15.7.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-select-element": "2.8.102"
+    "react-select-element": "2.8.106"
   },
   "devDependencies": {
     "@babel/core": "^7.28.3",
