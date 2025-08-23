@@ -40,21 +40,21 @@
     "react-select-element": "2.8.102"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.0",
+    "@babel/core": "^7.28.3",
     "@babel/eslint-parser": "^7.28.0",
-    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-env": "^7.28.3",
     "@babel/preset-react": "^7.27.1",
-    "@babel/register": "^7.27.1",
+    "@babel/register": "^7.28.3",
     "babel-loader": "^10.0.0",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
     "clean-webpack-plugin": "^4.0.0",
-    "core-js": "^3.45.0",
+    "core-js": "^3.45.1",
     "eslint": "8.57.1",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-react": "^7.37.5",
     "husky": "^9.1.7",
     "terser-webpack-plugin": "^5.3.14",
-    "webpack": "^5.101.0",
+    "webpack": "^5.101.3",
     "webpack-cli": "^6.0.1"
   },
   "imports": {
