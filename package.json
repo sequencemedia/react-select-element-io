@@ -31,7 +31,7 @@
     "cross-env": "^10.1.0",
     "debug": "^4.4.3",
     "handlebars": "^4.7.9",
-    "joi": "^18.1.1",
+    "joi": "^18.1.2",
     "module-alias": "^2.3.4",
     "nconf": "^0.13.0",
     "prop-types": "15.7.2",
