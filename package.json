@@ -24,7 +24,7 @@
     "start:dev": "cross-env NODE_ENV=development node ."
   },
   "dependencies": {
-    "@hapi/hapi": "^21.4.7",
+    "@hapi/hapi": "^21.4.8",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
     "@sequencemedia/react-render": "^2.4.147",
