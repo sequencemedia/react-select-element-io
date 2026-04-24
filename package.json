@@ -53,7 +53,7 @@
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-react": "^7.37.5",
     "husky": "^9.1.7",
-    "terser-webpack-plugin": "^5.4.0",
+    "terser-webpack-plugin": "^5.5.0",
     "webpack": "^5.106.2",
     "webpack-cli": "^7.0.2"
   },
