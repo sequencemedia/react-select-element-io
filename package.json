@@ -24,7 +24,7 @@
     "start:dev": "cross-env NODE_ENV=development node ."
   },
   "dependencies": {
-    "@hapi/hapi": "^21.4.8",
+    "@hapi/hapi": "^21.4.9",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
     "@sequencemedia/react-render": "^2.4.147",
@@ -35,8 +35,8 @@
     "module-alias": "^2.3.4",
     "nconf": "^0.13.0",
     "prop-types": "15.7.2",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "react-select-element": "2.9.34"
   },
   "devDependencies": {
