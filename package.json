@@ -19,7 +19,7 @@
     "build:dev": "cross-env NODE_ENV=development webpack --mode development",
     "lint": "eslint . --ext .mjs,.cjs,.jsx",
     "lint:fix": "npm run lint -- --fix",
-    "prepare": "husky",
+    "prepare": "node husky.mjs",
     "start": "cross-env NODE_ENV=production node .",
     "start:dev": "cross-env NODE_ENV=development node ."
   },
