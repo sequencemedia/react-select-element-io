@@ -61,5 +61,8 @@
     "#client/components/*": "./client/components/*/index.jsx",
     "#client/router": "./client/router/index.jsx",
     "#client/routes": "./client/routes/index.jsx"
+  },
+  "allowScripts": {
+    "core-js@3.51.0": true
   }
 }
